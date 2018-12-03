@@ -24,6 +24,7 @@
 </template>
 
 <script>
+// 2nd
 import { mapGetters } from 'vuex'
 
 export default {
@@ -37,7 +38,6 @@ export default {
     if (store.getters['users'][route.params.id]) {
       return
     }
-
     try {
       await store.dispatch('fetchUserInfo', { id: route.params.id })
     } catch (e) {

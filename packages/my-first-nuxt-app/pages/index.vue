@@ -22,6 +22,7 @@
 </template>
 
 <script>
+// 2nd
 import { mapGetters } from 'vuex'
 
 export default {
