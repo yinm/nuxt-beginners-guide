@@ -1,4 +1,4 @@
-// 2nd
+// 3rd
 import Vuex from 'vuex'
 
 export default () => (new Vuex.Store({
@@ -18,10 +18,12 @@ export default () => (new Vuex.Store({
     setItems (state, { items }) {
       state.items = items
     },
+
     setUser (state, { user }) {
       state.users[user.id] = user
     },
-    setUserItems(state, { user, items }) {
+
+    setUserItems (state, { user, items }) {
       state.userItems[user.id] = items
     }
   },
@@ -31,6 +33,7 @@ export default () => (new Vuex.Store({
       const items = await this.$axios.$get('https://qiita.com/api/v2/items?query=tag:nuxt.js')
       commit('setItems', { items })
     },
+
     async fetchUserInfo({ commit }, { id }) {
       const [user, items] = await Promise.all([
         this.$axios.$get(`https://qiita.com/api/v2/users/${id}`),
