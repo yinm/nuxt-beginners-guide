@@ -16,7 +16,7 @@ export default {
     login() {
       const cookies = new Cookies()
       cookies.set('credential', 'true', { maxAge: 90 })
-      this.$route.push('/')
+      this.$router.push('/')
     }
   }
 }
