@@ -29,29 +29,26 @@
 </template>
 
 <script>
+import moment from '~/plugins/moment'
+import { mapGetters } from 'vuex'
+
 export default {
+  async asyncData({ store }) {
+    await store.dispatch('posts/fetchPosts')
+  },
+
   computed: {
     showPosts() {
-      return [
-        {
-          id: '001',
-          title: 'title 1',
-          body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          created_at: '2018/08/10 12:00:00',
-          user: {
-            id: 'potato4d'
-          }
-        },
-        {
-          id: '002',
-          title: 'title 2',
-          body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          created_at: '2018/08/10 13:00:00',
-          user: {
-            id: 'potato4d'
-          }
-        },
-      ]
+      return this.posts.map(post => {
+        post.created_at = moment(post.created_at).format('YYYY/MM/DD HH:mm:ss')
+        return post
+      })
+    },
+    ...mapGetters('posts', ['posts'])
+  },
+  methods: {
+    handleClick(post) {
+      this.$router.push(`/posts/${post.id}`)
     }
   }
 }
