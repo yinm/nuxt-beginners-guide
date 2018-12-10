@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import mount from '~/plugins/moment'
+import moment from '~/plugins/moment'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -63,7 +63,7 @@ export default {
     },
     user() {
       const user = this.users.find(u => u.id === this.$route.params.id)
-      if (user) return null
+      if (!user) return null
       return Object.assign({ posts: [] }, user)
     },
     ...mapGetters('users', ['users'])

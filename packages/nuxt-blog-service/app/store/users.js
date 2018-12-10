@@ -3,12 +3,12 @@ export const state = () => ({
 })
 
 export const getters = {
-  users: (state) => state.users
+  users: state => state.users
 }
 
 export const mutations = {
   addUser(state, { user }) {
-    state.user.push(user)
+    state.users.push(user)
   },
   addUserPost(state, { user, post }) {
     state.userPosts[user.id].push(post)
