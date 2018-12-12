@@ -1,7 +1,7 @@
-const Vuex = require('vuex')
-const index = require('../../app/store')
-const { createLocalVue } = require('@vue/test-utils')
-const cloneDeep = require('lodash.clonedeep')
+import Vuex from 'vuex'
+import index from '../../app/store'
+import { createLocalVue } from '@vue/test-utils'
+import cloneDeep from 'lodash.clonedeep'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
