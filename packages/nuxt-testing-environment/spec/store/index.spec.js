@@ -1,3 +1,4 @@
+// 2nd
 import Vuex from 'vuex'
 import index from '../../app/store'
 import { createLocalVue } from '@vue/test-utils'
@@ -14,7 +15,7 @@ describe('store/index.js', () => {
   })
 
   describe('mutations', () => {
-    test('increment ミューテーションがコミットされると、count ステートの値が+1される', () => {
+    test('increment', () => {
       expect(store.getters['count']).toBe(0)
       store.commit('increment')
       expect(store.getters['count']).toBe(1)
@@ -22,7 +23,7 @@ describe('store/index.js', () => {
   })
 
   describe('actions', () => {
-    test('increment アクションを dispatch するたびに、increment ミューテーションがコミットされる', () => {
+    test('increment', () => {
       expect(store.getters['count']).toBe(0)
       store.dispatch('increment')
       expect(store.getters['count']).toBe(1)
