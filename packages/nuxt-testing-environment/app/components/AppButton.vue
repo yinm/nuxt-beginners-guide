@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p v-if="clicked">clicked</p>
+    <p v-show="clicked">clicked</p>
     <button type="button" @click="handleClick">click</button>
   </div>
 </template>
