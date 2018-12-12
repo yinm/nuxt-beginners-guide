@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^23.6.0",
-    "babel-preset-vue-app": "^2.0.0",
     "jest": "^23.6.0",
     "lodash.clonedeep": "^4.5.0",
     "nodemon": "^1.11.0"
@@ -34,7 +34,9 @@
   "babel": {
     "env": {
       "test": {
-        "presets": ["vue-app"]
+        "presets": [
+          "@babel/preset-env"
+        ]
       }
     }
   }
