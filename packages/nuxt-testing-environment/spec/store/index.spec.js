@@ -1,6 +1,6 @@
 // 2nd
 import Vuex from 'vuex'
-import index from '../../app/store'
+import index from '~/store'
 import { createLocalVue } from '@vue/test-utils'
 import cloneDeep from 'lodash.clonedeep'
 
