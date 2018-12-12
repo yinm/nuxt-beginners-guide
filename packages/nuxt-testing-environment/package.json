@@ -25,5 +25,17 @@
     "jest": "^23.6.0",
     "lodash.clonedeep": "^4.5.0",
     "nodemon": "^1.11.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": ["vue-app"]
+      }
+    }
   }
 }
