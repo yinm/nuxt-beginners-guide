@@ -32,4 +32,10 @@ describe('basic', () => {
     const $ = cheerio.load(html)
     expect($('#test').text()).toBe('test')
   })
+
+  test('/?redirect_to=/single へのリクエストが /single へとリダイレクトされる', async () => {
+    const html = await get('/?redirect_to=/single')
+    const $ = cheerio.load(html)
+    expect($('#single').text()).toBe('single')
+  })
 })
