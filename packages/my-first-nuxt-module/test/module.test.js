@@ -1,6 +1,6 @@
 const cheerio = require('cheerio')
 const { Nuxt, Builder } = require('nuxt')
-const config = require('./fixtures/nuxt.config')
+const config = require('./fixture/nuxt.config')
 const request = require('request-promise-native')
 
 const url = (path) => `http://localhost:3000${path}`
