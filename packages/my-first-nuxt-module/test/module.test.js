@@ -20,7 +20,7 @@ describe('basic', () => {
       await nuxt.listen(3000)
     }
     await Promise.all([createNuxt()])
-  }, 6000)
+  }, 60000)
 
   afterAll(async () => {
     if (process.env.NODE_ENV === 'development') return
