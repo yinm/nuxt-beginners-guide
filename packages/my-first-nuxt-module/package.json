@@ -4,18 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "jest": "^23.6.0",
-    "jsdom": "^13.0.0",
-    "nuxt": "^2.3.4",
-    "request-promise-native": "^1.0.5"
-  },
-  "scripts": {
-    "dev": "nuxt test/fixture",
-    "test": "jest",
-    "test:dev": "NODE_ENV=development jest"
-  },
-  "jest": {
-    "testEnvironment": "node"
+    "nuxt": "^2.3.4"
   }
 }
